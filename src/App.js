@@ -4,7 +4,6 @@ import './App.css';
 /* import Form from './Tugas-9/Form';
 import HargaBuah from './Tugas-10/HargaBuah'; */
 import Timer from './Tugas-11/Timer'
-require('./Tugas-11/style.css')
 
 
 
