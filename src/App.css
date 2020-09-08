@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.label-form{
+  display: inline-block; 
+  width: 150px; 
+  font-size: 15px;
+}
+
+input{
+  margin-bottom: 1em;
+}
+
+.data-buah{
+  border: 1px transparent; 
+  border-radius: 15px; 
+  width: 40%;
+  margin : 0px auto; 
+  padding: 15px;
+}
