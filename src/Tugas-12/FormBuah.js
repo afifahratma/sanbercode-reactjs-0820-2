@@ -14,7 +14,7 @@ class FormBuah extends Component{
               ],
             inputName : "",
             inputHarga : "",
-            inputBerat : "",
+            inputBerat : 0,
             index : -1
         }
     }
@@ -43,7 +43,7 @@ class FormBuah extends Component{
             dataHargaBuah: [...newDatabuah],
             inputName : "",
             inputHarga : "",
-            inputBerat : "",
+            inputBerat : 0,
             index: -1
         })
     }
@@ -132,7 +132,7 @@ class FormBuah extends Component{
                     <input required="required" type="text" name="hargaBuah" value={this.state.inputHarga} onChange={this.handleChangeTwo}/><br/>
                     
                     <strong className="label-form">Berat</strong>
-                    <input required="required" type="text" name="beratBuah" value={this.state.inputBerat} onChange={this.handleChangeThree}/><br/>
+                    <input required="required" type="number" name="beratBuah" value={this.state.inputBerat} onChange={this.handleChangeThree}/><br/>
 
                 <button>Simpan</button>
                 </form>
