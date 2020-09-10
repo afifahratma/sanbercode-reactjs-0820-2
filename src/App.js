@@ -6,8 +6,8 @@ import './Tugas-13/FormBuah.css'
 import HargaBuah from './Tugas-10/HargaBuah'; */
 //import Timer from './Tugas-11/Timer'
 //import FormBuah from './Tugas-12/FormBuah';
-import FormBuah from './Tugas-13/FormBuah.js'
-
+//import FormBuah from './Tugas-13/FormBuah.js'
+import Buah from './Tugas-14/Buah'
 
 
 function App() {
@@ -15,8 +15,9 @@ function App() {
    <div>
     {/* <Form/>
     <HargaBuah/> 
-    <Timer/> */}
+    <Timer/>
     <FormBuah/>
+ */}  <Buah/>
    </div>
   )
 }

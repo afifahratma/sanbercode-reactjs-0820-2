@@ -37,3 +37,17 @@
   }
 }
 
+button{
+  border-radius: 5px;
+
+}
+
+.form-buah{
+
+    border: 1px transparent; 
+    border-radius: 15px; 
+    width: 40%;
+    margin : 0px auto; 
+    padding: 15px;
+  
+}
