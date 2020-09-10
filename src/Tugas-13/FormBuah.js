@@ -15,7 +15,7 @@ const FormBuah  = () => {
       if (dataHargaBuah === null){
           axios.get(`http://backendexample.sanbercloud.com/api/fruits`)
           .then(res => {
-            setDataHargaBuah(res.data)
+            setDataHargaBuah(res.data.map(el=>{return {id: el.id, name: el.name, price:el.price, weight: el.weight}}))
             
           })
       }
@@ -25,27 +25,26 @@ const FormBuah  = () => {
       
     const submitForm = (event) => {
         event.preventDefault()
-       
-        var dataBaru = {name : input.name, price : input.price, weight : input.weight}
+        let name = input.name
+        let price = input.price.toString()
+        //var dataBaru = {name : input.name, price : input.price, weight : input.weight}
         
         if ( input.id === null){
-            axios.post(`http://backendexample.sanbercloud.com/api/fruits`,{name : input.name, price : input.price, weight : input.weight})
+            axios.post(`http://backendexample.sanbercloud.com/api/fruits`,{name, price, weight : input.weight})
             .then( res => {
-                var data = res.data
-                setDataHargaBuah([...dataHargaBuah, {id : data.id, name : data.name, price : data.price, weight: data.weight}])
+                
+                setDataHargaBuah([...dataHargaBuah, {id : res.data.id, name, price, weight: input.weight}])
                 setInput({id: null, name: "", price: "", weight: 0})
             })
         
     }else{
         axios.put(`http://backendexample.sanbercloud.com/api/fruits/${input.id}`,{name : input.name, price : input.price, weight : input.weight})
             .then( res => {
-                var newDatabuah = dataHargaBuah.map( x => {
-                    if(x.id === input.id){
-                        x.setInput = dataBaru
-                    }
-                    return x
-                })
-                setDataHargaBuah(newDatabuah)
+                let newDatabuah = dataHargaBuah.find(x => x.id === input.id)
+                newDatabuah.name = name
+                newDatabuah.price = price
+                newDatabuah.weight = input.weight
+                setDataHargaBuah([...dataHargaBuah])
                 setInput({id: null, name: "", price: "", weight: 0})
             })
       
@@ -85,9 +84,9 @@ const FormBuah  = () => {
 
     const deleteForm = (event)=>{
         var idBuah = parseInt(event.target.value)
+        var newDatabuah = dataHargaBuah.filter(x=> x.id !== idBuah)
         axios.delete(`http://backendexample.sanbercloud.com/api/fruits/${idBuah}`)
         .then(res =>{
-            var newDatabuah = dataHargaBuah.filter(x=> x.id !== idBuah)
             setDataHargaBuah(newDatabuah)
         }
             )
