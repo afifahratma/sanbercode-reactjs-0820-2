@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
+import '../App.css'
 
 const ThemeSwitch = () => {
     const state = useContext(ThemeContext)
@@ -12,7 +13,10 @@ const ThemeSwitch = () => {
       }
     
     return(
-        <button onClick={() => state.setTheme(state.theme.type)} style={btn}> Change Theme Navbar </button>
+        <div className='for-border'>
+        <h1>Klik untuk mengganti tema Navbar</h1>
+        <button onClick={() => state.setTheme(state.theme.type)} style={btn}> Ganti Tema </button>
+        </div>
     )
 }
 
