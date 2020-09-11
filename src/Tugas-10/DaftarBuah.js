@@ -1,4 +1,5 @@
 import React from 'react';
+import ItemBuah from './ItemBuah'
 
 let dataHargaBuah = [
     {nama: "Semangka", harga: 10000, berat: 1000},
@@ -25,13 +26,11 @@ let dataHargaBuah = [
                         <th>Berat</th>
                     </tr>
 
-                    {dataHargaBuah.map(el=>{
+                    {dataHargaBuah.map((el, index)=>{
                         return(
-                    <tr style={{backgroundColor:'#f59149'}}>
-                        <td>{el.nama}</td>
-                        <td>{el.harga}</td>
-                        <td>{el.berat/1000} Kg</td>
-                    </tr>
+                            <>
+                                <ItemBuah item={el} key={index}/>
+                            </>
                         )
                     } )}
                     </tbody>

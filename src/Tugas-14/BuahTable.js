@@ -3,7 +3,7 @@ import {BuahContext} from "./BuahContext"
 import axios from 'axios'
 
 const BuahTable = () =>{
-    const [dataHargaBuah, setDataHargaBuah, input, setInput] = useContext(BuahContext)
+    const [dataHargaBuah, setDataHargaBuah, , setInput] = useContext(BuahContext)
 
     const editForm = (event) =>{
         var idBuah = parseInt(event.target.value)

@@ -1,6 +1,5 @@
 import React from "react"
 import {BuahProvider} from "./BuahContext"
-import BuahList from "./BuahTable"
 import BuahForm from "./BuahForm"
 import BuahTable from "./BuahTable"
 
